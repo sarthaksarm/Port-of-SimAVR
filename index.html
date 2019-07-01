@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="main.css">
    <link rel="shortcut icon" href="">
 
-    <title>simavr</title>
+    <title>SimAVR</title>
   </head>
   <body>
 
@@ -18,7 +19,11 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-dark">
       <div class="container">
         <nav class = "headSim">PORT OF SIMAVR</nav>
-        <button class="modal-trigger" data-toggle="modal" href="#modal1">open .hex file</button>
+        <div class = "mr-right">
+          <button class="modal-trigger" data-toggle="modal" href="#modal1">Load .hex File</button>
+          <button id = "abort">Abort</button>
+        </div>
+      </div>
       </div>
     </nav>
 
@@ -26,7 +31,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="modalLabel">Open a file</h4>
+                    <h4 class="modal-title" id="modalLabel">Upload</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -51,16 +56,60 @@
       <div class = "row centerlize" style = "margin: 2rem;">
         <div class="card" style="width: 18rem; height: auto; align-items: center;">
           <div class="card-body">
-            <h5 class="card-title" style = "text-align: center">LED</h5>
+            <h5 class="card-title" style = "text-align: center; font-weight: bold;">LEDs</h5>
             <div id="leds" class="mcu-leds"></div>
           </div>
         </div>
       </div>
+
+      <div class = "row centerlize" style = "margin: 1rem;">
+        <div class="card" style="width: 18rem; height: auto; align-items: center;">
+          <div class="card-body" style="text-align: center;">
+            <h6 class="align-left" style="font-weight: bold;">Simulation Speed</h6>
+              <span>This slider can be used to control the simulation speed on LEDs.</span>
+              <p class="range-field" >
+                <input type="range" id="speed" min="0" max="200" style="width: 100%; margin-top:1rem;"/>
+              </p>
+          </div>
+        </div>
+      </div>
+
       <div class = "row centerlize" style = "margin: 2rem;">
         <ul class="mcu-terminal">
-          <li>Waiting for file...</li> 
+          <li>Waiting for the file..</li> 
         </ul>
       </div>
+    </div>
+
+    <div class="instruction">
+      <div class="row">
+          <h4><a href="#hidden" data-toggle="collapse"><b>How to use?</b></a></h4>
+      </div>
+      <div class="row">
+        <div id ="hidden" class="collapse">
+           <ol>
+            <li>This is Port of Atmel ATMega1280 mcu(Micro Control Unit) which has 11 in total Ports(PA, PB, ...PK, excuding PI) for connection acc.to its <a href="https://ww1.microchip.com/downloads/en/devicedoc/atmel-2549-8-bit-avr-microcontroller-atmega640-1280-1281-2560-2561_datasheet.pdf"><b><u>Pin-Outs</u></b></a>.<br>Each Port having 8 pins and thus its LEDs representation.</li>
+
+            <li>To convert an elf file into hex file, use command:<br><b>avr-objcopy -j .text -j .data -O ihex main.elf main.hex</b></li>
+            <li>
+              To increase the simulation speed on the cost of higher CPU utilization, slider can be used.
+            </li>
+            <li>To stop the simulation process at some point of time, "Abort Simulation" can be used.
+            </li>
+
+            <li>To Debug AVR codes using it, upload a generated file in .hex format(generating from AVR codes).<br>The simulation is being shown in form of LEDs which is the first and direct visual sign of debugging, as comparing the results with as expected and shown.</li>
+
+            <li>Ouput Terminal can be used to debug as the second approach i.e the precise and accurate details which highlights the points which may help to debug namely no. of machine cycles taken by instructions, time delay, time taken in execution of each cycle etc.(depending upon hardware being used). Better interpretation out of it, may validate the input in just one go!</li>
+           </ol>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+     <u>A Project under IIT Bombay</u><br>
+     Special Thanks to <a href="https://www.it.iitb.ac.in/frg/wiki/index.php/Fundamental_Research_Group">Fundamental Research Group(FRG)</a>, IIT Bombay.<br><br>
+     Thanks to Michel Pollet for <a href = "https://github.com/buserror/simavr/tree/master/simavr">SimAVR</a> and Alon Zakai for <a href="https://github.com/emscripten-core/emscripten">Emscripten</a>.<br><br>
+     
     </div>
 
     <!-- Optional JavaScript -->
