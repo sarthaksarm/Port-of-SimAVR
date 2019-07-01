@@ -1,0 +1,10 @@
+<div class="mcu-leds">
+    {% for item in leds %}
+    <ul>
+        {% for port in item %}
+        <li id="led-{{ port }}" class="grey">{{ port }}</li>
+        {% endfor %}
+    </ul>
+    {% endfor %}
+</div>
+

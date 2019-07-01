@@ -1,0 +1,10 @@
+<div class="mcu-btns">
+    {% for item in btns %}
+    <ul>
+        {% for port in item %}
+        <li id="btn-{{ port }}" class="grey">{{ port }}</li>
+        {% endfor %}
+    </ul>
+    {% endfor %}
+</div>
+
