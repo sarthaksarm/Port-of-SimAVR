@@ -1,0 +1,1 @@
+/home/sarm/emsdk/fastcomp/emscripten/emcc  -s ASM_JS=1 -s WASM=0 -s FORCE_FILESYSTEM=1 -s ERROR_ON_UNDEFINED_SYMBOLS=0 -s EXTRA_EXPORTED_RUNTIME_METHODS='["ccall", "cwrap","ALLOC_NORMAL"]'  @CMakeFiles/simavr.js.dir/objects1.rsp  -o simavr.js @CMakeFiles/simavr.js.dir/linklibs.rsp
