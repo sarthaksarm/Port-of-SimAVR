@@ -1,3 +1,8 @@
+@body{
+    font-family: batman;
+    margin:0;
+}
+
 .headSim{
 	color: white;
 	font-weight: bold;
@@ -29,7 +34,7 @@
     overflow-y: scroll;
     max-height: 300px;
     width: 70%;
-    background-color: gray;
+    background-color: black;
 }
 
 .mcu-terminal li {
@@ -61,5 +66,29 @@
     transition: 0.1s;
     vertical-align: middle;
     display: inline-block;
+    background-color: #9e9e9e;
 }
 
+.instruction{
+    height: auto;
+    padding: 2rem;
+    max-width: 100%;
+    overflow: hidden;
+    color: black;
+    background-color: lightgray;
+}
+
+.instruction a{
+    color: inherit;
+}
+.instruction a : hover{
+    text-decoration: none;
+}
+
+.footer{
+    bottom: 0;
+    background-color: #212529;
+    color:white;
+    padding: 8px;
+    text-align: center;
+ }

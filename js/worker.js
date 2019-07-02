@@ -78,6 +78,13 @@ function set_pin(port, pin, value) {
     Module._set_pin(port, pin, value);
 }
 
+function stop_timer() {
+    self.clearInterval(timer);
+    timer = null;
+    console.log("in stop timer")
+    //Module._exit();
+}
+
 self.addEventListener('message', function(e) {
     var d = e.data;
 
@@ -89,6 +96,9 @@ self.addEventListener('message', function(e) {
         set_pin(d.port, d.pin, d.value);
     } else if(d.cmd == 'set_speed') {
         restart_timer(d.speed);
+    }else if(d.cmd == 'stop') {
+        console.log("aborting execution");
+        stop_timer();
     }
 }, false);
 

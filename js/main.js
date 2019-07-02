@@ -52,7 +52,7 @@ var avrsim = {
         this.print("Initializing worker...");
         this.worker = new Worker('js/worker.js');
 
-        var self = this;			//here this is pointing to avrsim
+        var self = this;            //here this is pointing to avrsim
         // console.log("in the init worker")
         // console.log(this == avrsim)
         this.worker.addEventListener('message', function(e) {
@@ -75,7 +75,7 @@ var avrsim = {
         }.bind(self));
     },
     init: function() {
-        nunjucks.configure({autoescape: true});			//todo : watch a video on this
+        nunjucks.configure({autoescape: true});         //todo : watch a video on this
 
         this.init_worker();
         this.init_ports();
@@ -168,5 +168,11 @@ $(function(){
             avrsim.handle_load();
         })
     });
+
+    var self = avrsim;
+        $('#abort').click(function() {
+            console.log("signaling stop...");
+            self.worker.postMessage({cmd: 'stop'});
+        });
     avrsim.init();
 })
