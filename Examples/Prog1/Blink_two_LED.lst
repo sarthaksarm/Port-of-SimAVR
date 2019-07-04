@@ -1,0 +1,103 @@
+   1               		.file	"Blink_two_LED.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	main
+  18               	main:
+  19               	.LFB6:
+  20               	.LM1:
+  21               	/* prologue: function */
+  22               	/* frame size = 0 */
+  23               	.LM2:
+  24 0000 84B1      		in r24,36-32
+  25 0002 8C60      		ori r24,lo8(12)
+  26 0004 84B9      		out 36-32,r24
+  27               	.LBB18:
+  28               	.LBB19:
+  29               	.LBB20:
+  30               	.LBB21:
+  31               	.LM3:
+  32 0006 29E1      		ldi r18,lo8(25)
+  33 0008 30E0      		ldi r19,hi8(25)
+  34               	.LVL0:
+  35               	.L4:
+  36               	.LBE21:
+  37               	.LBE20:
+  38               	.LBE19:
+  39               	.LBE18:
+  40               	.LM4:
+  41 000a 2A9A      		sbi 37-32,2
+  42               	.LM5:
+  43 000c 2B98      		cbi 37-32,3
+  44 000e 80E1      		ldi r24,lo8(10000)
+  45 0010 97E2      		ldi r25,hi8(10000)
+  46               	.LVL1:
+  47               	.L2:
+  48               	.LBB25:
+  49               	.LBB24:
+  50               	.LBB23:
+  51               	.LBB22:
+  52               	.LM6:
+  53 0012 F901      		movw r30,r18
+  54               	.LVL2:
+  55               	/* #APP */
+  56               	 ;  105 "c:/winavr-20100110/lib/gcc/../../avr/include/util/delay_basic.h" 1
+  57 0014 3197      		1: sbiw r30,1
+  58 0016 01F4      		brne 1b
+  59               	 ;  0 "" 2
+  60               	/* #NOAPP */
+  61               	.LBE22:
+  62               	.LBE23:
+  63               	.LM7:
+  64 0018 0197      		sbiw r24,1
+  65               	.LM8:
+  66 001a 01F4      		brne .L2
+  67               	.LBE24:
+  68               	.LBE25:
+  69               	.LM9:
+  70 001c 2A98      		cbi 37-32,2
+  71               	.LM10:
+  72 001e 2B9A      		sbi 37-32,3
+  73 0020 80E1      		ldi r24,lo8(10000)
+  74 0022 97E2      		ldi r25,hi8(10000)
+  75               	.LVL3:
+  76               	.L3:
+  77               	.LBB26:
+  78               	.LBB27:
+  79               	.LBB28:
+  80               	.LBB29:
+  81               	.LM11:
+  82 0024 F901      		movw r30,r18
+  83               	.LVL4:
+  84               	/* #APP */
+  85               	 ;  105 "c:/winavr-20100110/lib/gcc/../../avr/include/util/delay_basic.h" 1
+  86 0026 3197      		1: sbiw r30,1
+  87 0028 01F4      		brne 1b
+  88               	 ;  0 "" 2
+  89               	/* #NOAPP */
+  90               	.LBE29:
+  91               	.LBE28:
+  92               	.LM12:
+  93 002a 0197      		sbiw r24,1
+  94               	.LM13:
+  95 002c 01F4      		brne .L3
+  96 002e 00C0      		rjmp .L4
+  97               	.LBE27:
+  98               	.LBE26:
+  99               	.LFE6:
+ 125               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 Blink_two_LED.c
+C:\Users\SARTHA~1\AppData\Local\Temp/ccnaPihj.s:2      *ABS*:0000003f __SREG__
+C:\Users\SARTHA~1\AppData\Local\Temp/ccnaPihj.s:3      *ABS*:0000003e __SP_H__
+C:\Users\SARTHA~1\AppData\Local\Temp/ccnaPihj.s:4      *ABS*:0000003d __SP_L__
+C:\Users\SARTHA~1\AppData\Local\Temp/ccnaPihj.s:5      *ABS*:00000034 __CCP__
+C:\Users\SARTHA~1\AppData\Local\Temp/ccnaPihj.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\SARTHA~1\AppData\Local\Temp/ccnaPihj.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\SARTHA~1\AppData\Local\Temp/ccnaPihj.s:18     .text:00000000 main
+
+NO UNDEFINED SYMBOLS
