@@ -27,7 +27,7 @@ EXTRA_EXPORTED_RUNTIME_METHODS=’[“ccall”,”cwrap”,”ALLOC_NORMAL”]�
 
 
 <h2>How to use?</h2>
-1. This is Port of Atmel ATMega1280 mcu(Micro Control Unit) which has 11 in total Ports(PA, PB, ...PK, excuding PI) for connection acc.
+1. This is Port of Atmel ATMega1280 mcu(Micro Control Unit) which has 11 in total Ports(PA, PB, ...PK, excluding PI) for connection acc.
 to its Pin-Outs.
 Each Port having 8 pins and thus its LEDs representation.<br>
 2. To convert an elf file into hex file, use command:<Br>
