@@ -53,6 +53,9 @@ Emscripten version used: emcc 1.38.36<br><br>
 <li>The timing is fixed as described for the 5V-versions.
 <li>Only .hex file format is acceptable. However, command has been provided to convert an elf file into .hex .</ol><br>
 
+<h2>Access PORT</h2>
+The port is accessible at https://sarthaksarm.github.io/Port-of-SimAVR/
+
 <h2>CONTRIBUTING</h2>
 We welcome the patches. Please submit your changes by Pull requests.<br>
 
